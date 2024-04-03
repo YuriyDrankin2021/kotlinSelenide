@@ -2,7 +2,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
 import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 
 plugins {
-    kotlin("jvm") version "1.6.20"
+    kotlin("jvm") version "1.9.23"
 }
 
 group = "org.example"
@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.6.10")
-    testImplementation("com.codeborne:selenide:6.3.5")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.23")
+    testImplementation("com.codeborne:selenide:7.2.3")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
     testImplementation("org.assertj:assertj-core:3.22.0")
     implementation("io.github.microutils:kotlin-logging:2.1.21")
@@ -44,5 +44,5 @@ tasks.test {
 
 tasks.wrapper {
     distributionType = Wrapper.DistributionType.ALL
-    gradleVersion = "7.4"
+    gradleVersion = "8.7"
 }

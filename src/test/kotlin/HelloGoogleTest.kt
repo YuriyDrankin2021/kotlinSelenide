@@ -11,11 +11,6 @@ private val log = KotlinLogging.logger {}
 
 class HelloGoogleTest {
 
-    @BeforeAll
-    fun setUp() {
-        open("https://google.com")
-    }
-
     @Test
     fun fun1() {
         val inputString = element(By.name("q"))
@@ -23,5 +18,13 @@ class HelloGoogleTest {
         inputString.sendKeys(str)
         inputString.pressEnter()
         element(By.name("q")).shouldHave(Condition.exactValue(str))
+    }
+
+    companion object {
+        @JvmStatic
+        @BeforeAll
+        fun setUp(): Unit {
+            open("https://google.com")
+        }
     }
 }
